@@ -1,4 +1,12 @@
 
+.jumbotron {
+  height: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 0%;
+  padding-bottom: 0%;
+  background-color: aqua;
+}
 body {
     font-family:'Luckiest Guy', cursive;
     font-size: 16px;
@@ -7,12 +15,32 @@ body {
     background-size: cover;
   }
 
-  button,.btn {
+  button, .btn {
     margin: 20px;
     font-size: 14px;
     letter-spacing: 1.5px;
+    background-color: black ;
+    color: aqua;
+
+  }
+
+  #add-cartoon {
+    background-color: black ;
+    color: aqua;
   }
 
   .imgStyle {
       padding: 25px;
   }
+
+ #gifs {
+  margin-top:10px;
+  display: flex;
+  flex-wrap: wrap;
+/*   flex-direction: column; */
+	flex-wrap: wrap;
+/* 	height: 100vw; */
+  align-items: stretch;
+  justify-content: space-around;
+  margin-bottom: 50px;
+ } 
