@@ -1,4 +1,9 @@
 $(document).ready(function(){
+    jQuery.ajaxPrefilter(function(options) {
+        if (options.crossDomain && jQuery.support.cors) {
+            options.url = "https://cors-anywhere.herokuapp.com/" + options.url;
+        }
+     });
 
     var topics = ["charlie brown", "the jetsons", "tom and jerry", "rocky and bullwinkle", "felix the cat", "captain caveman", 
     "super friends", "hong kong phooey", "heckle and jeckle", "scooby doo", "mighty mouse" ]
@@ -36,7 +41,7 @@ function makeButtons(){
     //Function for grabbing GIPHY API content//
 function displayGifs(){
     var cartoonName = $(this).attr("data-name");
-    var giphyURL = "//api.giphy.com/v1/gifs/search?q=" + cartoonName + "&api_key=dc6zaTOxFJmzC&limit=10";
+    var giphyURL = "http://api.giphy.com/v1/gifs/search?q=" + cartoonName + "&api_key=vxfK3I4jcO09QhSjN60CAEFfshyPLGS0&limit=10";
 
     $.ajax({
         url: giphyURL,
@@ -71,7 +76,10 @@ function displayGifs(){
 };
 
     //On click event for elements after the page has loaded
-    $(document).on("click",".cartoon-btn", displayGifs );
+    $(document).on("click",".cartoon-btn", (event) => {
+        event.preventDefault()
+        displayGifs 
+    });
 
     //To animate GIFS
 
