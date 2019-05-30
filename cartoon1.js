@@ -41,7 +41,7 @@ function makeButtons(){
     //Function for grabbing GIPHY API content//
 function displayGifs(){
     var cartoonName = $(this).attr("data-name");
-    var giphyURL = "http://api.giphy.com/v1/gifs/search?q=" + cartoonName + "&api_key=vxfK3I4jcO09QhSjN60CAEFfshyPLGS0&limit=10";
+    var giphyURL = "https://api.giphy.com/v1/gifs/search?q=" + cartoonName + "&api_key=2U9VGJZHZ1zln2kbebNnY99c1RvUZWmF&limit=10";
 
     $.ajax({
         url: giphyURL,
