@@ -39,8 +39,8 @@ function makeButtons(){
     makeButtons();
 
     //Function for grabbing GIPHY API content//
-function displayGifs(){
-    var cartoonName = $(this).attr("data-name");
+function displayGifs(cartoon){
+    var cartoonName = cartoon
     var cartoonStr = cartoonName.split(" ").join("+");
     var giphyURL = "https://api.giphy.com/v1/gifs/search?q=" + cartoonStr + "&api_key=vxfK3I4jcO09QhSjN60CAEFfshyPLGS0&limit=10";
 
@@ -77,9 +77,9 @@ function displayGifs(){
 };
 
     //On click event for elements after the page has loaded
-    $(document).on("click",".cartoon-btn", (event) => {
+    $(document).on("click",".cartoon-btn", function(event) {
         event.preventDefault()
-        displayGifs 
+        displayGifs($(this).data("name"))
     });
 
     //To animate GIFS
